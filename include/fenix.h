@@ -123,6 +123,12 @@ typedef struct {
 extern const Fenix_Data_subset  FENIX_DATA_SUBSET_FULL;
 extern const Fenix_Data_subset  FENIX_DATA_SUBSET_EMPTY;
 
+/* Force the external declarations to prevent warnings about
+ * a missing prototype.
+ */
+extern int __fenix_preinit(int *, MPI_Comm, MPI_Comm *, int *, char ***, int, int, MPI_Info, int *, jmp_buf*);
+extern void __fenix_postinit(int *);
+
 #define Fenix_Init(_role, _comm, _newcomm, _argc, _argv, _spare_ranks,  \
                    _spawn, _info, _error)                               \
     {                                                                   \
